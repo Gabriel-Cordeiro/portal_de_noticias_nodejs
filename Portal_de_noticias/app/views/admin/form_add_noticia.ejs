@@ -2,11 +2,41 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Formul�rio de cadastro de Not�cia</title>
+			<title>Formulário de cadastro de Notícia</title>
 		</head>
 	<body>
 
-		<h1>Adicionar not�cia</h1>
+		<h1>Adicionar notícia</h1>
+		<br />
+
+		<% if(validacao){ %>
+			<ul>
+				<% for(var i = 0; i< validacao.length; i++) { %>
+					<li>
+						<%= validacao[i].msg %>
+					</li>
+				<% } %>
+			</ul>
+		<% } %>
+
+		<form action= "/noticias/salvar" method="post" >
+			<label>	Título </label>
+			<input type="text" id="titulo" name="titulo" placeholder="Título da notícia"/> 
+			<br />
+			<label>	Resumo </label>
+			<input type="text" id="resumo" name="resumo" placeholder="Resumo da notícia"/> 
+			<br />
+			<label>	Nome Autor </label>
+			<input type="text" id="autor" name="autor" placeholder="Autor da notícia"/> 
+			<br />
+			<label>	Data dos fatos </label>
+			<input type="date" id="data_noticia" name="data_noticia" placeholder="Data da notícia"/> 
+			<br />
+			<label>Notícia</label>
+			<textarea id="noticia", name = "noticia", rows="5" cols="30"> </textarea>
+			<br />
+			<input type="submit", value="Enviar">
+		</form>
 
 	</body>
 </html>
