@@ -5,7 +5,7 @@ function NoticiasDAO(connection)
 
 NoticiasDAO.prototype.getNoticias = function (callback)
 {
-    this._connection.query('select * from noticias order by data_Criacao desc', callback);
+    this._connection.query('select * from noticias order by data_Criacao', callback);
 };
 
 NoticiasDAO.prototype.getNoticia = function(id_noticia,callback)
